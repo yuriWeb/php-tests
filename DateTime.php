@@ -1,5 +1,6 @@
 <?php
-define('DATE_FORMAT', 'Y.m.d');
+//define('DATE_FORMAT', 'Y.m.d');
+define('DATE_FORMAT', 'Y.m.d H:i');
 
 function convertToDate($dateString) {
     $date = DateTime::createFromFormat(DATE_FORMAT, $dateString);
@@ -12,7 +13,10 @@ function convertToDate($dateString) {
 
 }
 
-convertToDate('2015.12.26');
-convertToDate('20151226');
+//convertToDate('2015.12.26');
+//convertToDate('20151226');
+convertToDate('2015.12.26 12:00');
+convertToDate('2015.12.26 12:0');
+convertToDate('2015.12.26 12');
 
 
