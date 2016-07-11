@@ -44,6 +44,7 @@
   </div>
 
   <script>
+    //If element at start was displayed (even inside hidden parent) and then it was moved to place were it is hidden then show do not work (if colled before move)
     $(function() {
       $('.child1').prependTo($('.container1'));
       $('.child1').show();
