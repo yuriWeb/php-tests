@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="robots" content="noindex,nofollow"/>
+  <title>Amadeus Content Rail: Form</title>
+  <script type="text/javascript" src="/tests/jQuery/jquery-1.10.2.min.js"></script>
+  <style>
+    .hidden {display: none}
+
+    .container1 {
+      border: 1px solid red;
+    }
+
+    .container1 .child1 {
+      display: none;
+    }
+
+    .container2 {
+      border: 1px solid green;
+    }
+
+    .container2 .child2 {
+      display: none;
+    }
+
+  </style>
+</head>
+<body>
+  This is page
+  <div class="hidden">
+    <div class="child1">child content 1</div>
+    <div class="child2">child content 2</div>
+  </div>
+
+  <div class="container1">
+    container1
+
+  </div>
+
+  <div class="container2">
+    container2
+
+  </div>
+
+  <script>
+    $(function() {
+      $('.child1').prependTo($('.container1'));
+      $('.child1').show();
+      $('.child2').show();
+      $('.child2').prependTo($('.container2'));
+    });
+  </script>
+
+</body>
+</html>
