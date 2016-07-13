@@ -28,8 +28,12 @@ class TestClosure {
 
     public function printVisibleLines($suffix) {
         $this->forAllVisible(function(Line $line) use ($suffix) {
-            echo $line->text . $suffix . '<br>';
+            $this->printLine($line, $suffix);
         });
+    }
+
+    protected function printLine(Line $line, $suffix) {
+        echo $line->text . $suffix . '<br>';
     }
 
     public function forAll(Closure $c) {
@@ -49,4 +53,4 @@ class TestClosure {
 }
 
 $test = new TestClosure();
-$test->printVisibleLines('_suf');
+$test->printVisibleLines('_sf');
