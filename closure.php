@@ -1,5 +1,20 @@
 <?php
+$a = 10;
+$b = 11;
+$c = 12;
 
+$func = function ($a = 2, $b = 2) use ($c) {
+    return $a + $b + $c;
+};
+
+$a = 1;
+$b = 2;
+$c = 3;
+
+echo $func($a);
+
+
+/*
 class Line {
     public $visible = true;
     public $text;
@@ -44,7 +59,7 @@ class TestClosure {
 
     public function forAllVisible(Closure $c) {
         /** @var Line $line */
-        foreach ($this->lines as $line) {
+/*        foreach ($this->lines as $line) {
             if ($line->visible) {
                 $c($line);
             }
@@ -54,3 +69,4 @@ class TestClosure {
 
 $test = new TestClosure();
 $test->printVisibleLines('_sf');
+*/
