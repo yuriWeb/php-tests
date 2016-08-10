@@ -17,6 +17,7 @@ class Test {
         $ticketNumberPrefix = $this->getMicrotimeAsString() . $randomValue;
 
         for ($ticketNumberSuffix = 1; $ticketNumberSuffix < 10; $ticketNumberSuffix++) {
+            //echo 'generator: ' . $ticketNumberPrefix . $ticketNumberSuffix . '<br>';
             yield $ticketNumberPrefix . $ticketNumberSuffix;
         }
     }
