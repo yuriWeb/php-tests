@@ -1,5 +1,27 @@
 <?php
-class Hotel {
+//Errors
+libxml_use_internal_errors(true);
+$reader = new XMLReader();
+$reader->open('data/hotels_with_errors.xml');
+while( $reader->read() ) {
+    echo $reader->name . '<br>';
+    echo $reader->readString() . '<br>';
+}
+
+print_r(libxml_get_errors());
+libxml_clear_errors();
+
+
+
+/**
+$reader = new XMLReader();
+$opened = $reader->open('data/not_existing_file.xml');
+if (!$opened) {
+echo 'not opened<br>';
+}
+ */
+
+/*class Hotel {
 
 }
 
@@ -50,3 +72,4 @@ function hotelEnd(XMLReader $reader) {
 foreach (main() as $hotel) {
     echo 'in cycle<br>';
 }
+*/

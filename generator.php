@@ -1,6 +1,24 @@
 <?php
+/**
+ * @return array
+ */
+function getGenerator()
+{
+    $i = 0;
+    while ($i < 3) {
+        yield $i;
+        $i++;
+    }
+}
+
+foreach (getGenerator() as $value) {
+    echo $value;
+}
+echo 'end';
 
 
+
+/*
 class Test {
     protected function getMicrotimeAsString()
     {
@@ -34,3 +52,4 @@ class Test {
 
 $a = new Test();
 $a->getValues();
+*/
