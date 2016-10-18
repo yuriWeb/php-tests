@@ -53,7 +53,7 @@ foreach($sXml->xpath('//e:Body') as $body) {
 }
 */
 
-$xml = '<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+/*$xml = '<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
    <s:Body>
       <soldSeatsResponse xmlns="http://tempuri.org/">
          <soldSeatsResult>false</soldSeatsResult>
@@ -67,7 +67,7 @@ $sXml->registerXPathNamespace('e', 'http://schemas.xmlsoap.org/soap/envelope/');
 $bodyArray = $sXml->xpath('//e:Body');
 foreach ($bodyArray as $body) {
     echo 'Just do nothing';
-}
+}*/
 
 //print_r($body);
 
@@ -76,10 +76,10 @@ foreach ($bodyArray as $body) {
 }*/
 
 //echo $body->soldSeatsResponse->errorMessage;
-$errorMessages = $body->xpath('descendant::errorMessage');
+/*$errorMessages = $body->xpath('descendant::errorMessage');
 foreach ($errorMessages as $error) { //Why this does not work???
     print_r($error);
-}
+}*/
 
 
 /*echo $sXml->asXML();
@@ -92,3 +92,10 @@ foreach ($errorMessages as $error) { //Why this does not work???
 
 print_r($sXml);
 */
+
+
+$xml = '<diffgram />';
+$sXml = simplexml_load_string($xml);
+if (!isset($sXml->NewDataSet->Table)) {
+    echo 'Validation works';
+}
