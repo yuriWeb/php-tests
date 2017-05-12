@@ -93,9 +93,40 @@ foreach ($errorMessages as $error) { //Why this does not work???
 print_r($sXml);
 */
 
-
+/*
 $xml = '<diffgram />';
 $sXml = simplexml_load_string($xml);
 if (!isset($sXml->NewDataSet->Table)) {
     echo 'Validation works';
 }
+*/
+
+/*
+new \SimpleXMLElement($this->getEmptyResponse()));
+
+    $response = '
+<getReservationCodesResponse xmlns="http://tempuri.org/">
+ <getReservationCodesResult>
+    <xs:schema id="NewDataSet" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+       <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+          <xs:complexType>
+             <xs:choice minOccurs="0" maxOccurs="unbounded"/>
+          </xs:complexType>
+       </xs:element>
+    </xs:schema>
+    <diffgr:diffgram xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"/>
+ </getReservationCodesResult>
+</getReservationCodesResponse>
+*/
+
+
+
+$xml = '<someTag/>';
+$xml = '<GetETicketPDFResponse><GetETicketPDFResult></GetETicketPDFResult></GetETicketPDFResponse>';
+$sXml = new SimpleXMLElement($xml);
+$url = (string)$sXml->GetETicketPDFResponse->GetETicketPDFResult;
+if (!$url) {
+    echo 'no url2';
+}
+
+$var = $sXml->GetETicketPDFResponse->GetETicketPDFResult;

@@ -1,5 +1,14 @@
 <?php
 
+$checkPattern = '/^[.]+$/u';
+if (preg_match($checkPattern, 'test')) {
+    echo 'dot works';
+} else {
+    echo 'dot not works';
+}
+
+
+/*
 $string = 'passenger0name';
 $string = 'passenger0lastName';
 $string = 'test';
@@ -18,3 +27,4 @@ echo $matches[1];
 echo '<br>';
 echo $matches[2];
 echo '<br>';
+*/

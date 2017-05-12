@@ -10,6 +10,31 @@ function getOptions() {
     ];
 }
 
+function getParameters() {
+    return [
+
+    ];
+}
+
+
+ini_set('default_socket_timeout', 10);
+
+$soapClient = new SoapClient('./data/1A.wsdl', getOptions());
+try {
+    $result = $soapClient->__soapCall( 'PAY_ValidatePayment_14_6', ['parameters' => getParameters()] );
+} catch (Exception $e) {
+    echo 'Exception: ' . $e->getMessage();
+}
+
+echo '<br><br>RESULT:<br>';
+print_r($result);
+
+echo '<br><br>REQUEST:<br>';
+print_r($soapClient->__getLastRequest());
+
+
+
+/**
 function getSoapHeader() {
     $company = ''; //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     $password = ''; //<=================================
@@ -52,3 +77,4 @@ print_r($result);
 
 echo '<br><br>REQUEST:<br>';
 print_r($soapClient->__getLastRequest());
+*/
